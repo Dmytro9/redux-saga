@@ -4,7 +4,7 @@ import {
 } from './MainDisplay';
 
 import {
-    
+
 } from './../../actions'
 
 import {
@@ -13,11 +13,11 @@ import {
 
 const mapStateToProps = (state) => {
     return {
-        isCheckingOut:isCheckingOutSelector(state)
+        isCheckingOut: isCheckingOutSelector(state)
     }
 };
 const mapDispatchToProps = (dispatch) => ({
-    
+
 });
 
 export const MainContainer = connect(

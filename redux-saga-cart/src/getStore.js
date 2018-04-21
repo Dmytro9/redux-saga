@@ -9,7 +9,7 @@ import { Iterable } from 'immutable'
 import thunk from 'redux-thunk'
 
 import { getQuery } from './utility'
-import { reducer } from './combineReducers';
+import { reducer } from './combineReducers'
 import { defaultState } from './defaultState'
 
 const stateTransformer = (state) => {
@@ -21,12 +21,12 @@ const logger = createLogger({
     stateTransformer,
 });
 
-export const getStore = ()=>{
+export const getStore = () => {
     const middleWares = [thunk];
-    if (getQuery()['logger']) { middleWares.push(logger)}
+    if (getQuery()['logger']) { middleWares.push(logger) }
     const composables = [applyMiddleware(...middleWares)]
     const enhancer = compose(
-        ... composables
+        ...composables
     );
     const store = createStore(
         reducer,
