@@ -12,7 +12,7 @@ import { getQuery } from './utility'
 import { reducer } from './combineReducers'
 import { defaultState } from './defaultState'
 import createSagaMiddleware from 'redux-saga'
-
+import { initSagas } from './initSagas'
 
 const stateTransformer = (state) => {
     if (Iterable.isIterable(state)) return state.toJS();
@@ -37,5 +37,6 @@ export const getStore = () => {
         enhancer
     );
     console.log('saga is connected')
+    initSagas(sagaMiddleware)
     return store;
 };
